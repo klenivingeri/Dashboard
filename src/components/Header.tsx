@@ -1,18 +1,17 @@
-import { Flex, Text, Input, Icon} from '@chakra-ui/react'
-import { RiSearchLine } from 'react-icons/ri'
+import { Flex, Text, Input, Icon, HStack, Box, Avatar} from '@chakra-ui/react'
+import { RiNotificationLine, RiSearchLine, RiUserAddLine } from 'react-icons/ri'
 
 export function Header(){
     return(
         <Flex 
             as="header" 
             w="100%"
-            maxWidth={1488}
+            maxWidth={1400}
             h="20"
             mx="auto"
             mt="4"
             px="6"
             alignItems="center"
-
         >
             <Text as="p"
                 fontSize="3xl"
@@ -22,12 +21,9 @@ export function Header(){
                 
             >
                 dashgo
-                <Text as="span"
-                    ml="1"
-                    color="pink.500"
-                >.</Text>
+                <Text as="span" ml="1" color="pink.500">.</Text>
            </Text>
-           <Flex as="label"
+            <Flex as="label"
             flex="1"
             py="4"
             px="8"
@@ -51,6 +47,37 @@ export function Header(){
                 fontSize="25"
                 />
            </Flex>
+            <Flex
+                alignItems="center"
+                ml="auto"
+            >
+            <HStack
+                spacing="8"
+                mx="8"
+                pr="8"
+                py="1"
+                color="gray.300"
+                borderRightWidth={1}
+                borderColor="gray.700"
+
+
+                >
+                    <Icon as={RiNotificationLine} fontSize="20"/>
+                    <Icon as={RiUserAddLine} fontSize="20"/>
+                </HStack>
+
+            <Flex>
+                <Box>
+                    <Text mr="4" textAlign="right">
+                        Erick Kleniving
+                    </Text>
+                    <Text color="gray.700" fontSize="smal">
+                        klenivingeri@gmail.com
+                    </Text>
+                </Box>
+                <Avatar size="md" name="Erick Kleniving" src="https://github.com/klenivingeri.png"/>
+            </Flex>
+        </Flex>
     </Flex>
     )
 }
