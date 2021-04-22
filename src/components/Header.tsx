@@ -71,7 +71,7 @@ export function Header(){
                     <Text mr="4" textAlign="right">
                         Erick Kleniving
                     </Text>
-                    <Text color="gray.700" fontSize="smal">
+                    <Text mr="4" color="gray.700" fontSize="smal">
                         klenivingeri@gmail.com
                     </Text>
                 </Box>
