@@ -1,6 +1,7 @@
-import { Flex, flexbox, SimpleGrid, Box, Text, theme } from '@chakra-ui/react'
+import { Flex, SimpleGrid, Box, Text, theme } from '@chakra-ui/react'
 import dynamic from 'next/dynamic';
 import { Header } from '../components/Header';
+
 import { Heads } from '../components/Heads';
 import { Sidebar } from '../components/Sidebar';
 
@@ -68,9 +69,9 @@ export default function (){
     return(
         <Flex direction="column" h="100vh">
             <Heads title="Dashboard"/>
-            <Header/>
+            <Header />
             <Flex w="100%" my="6" maxWidth={1400} mx="auto" px="6" >
-                <Sidebar/>
+                <Sidebar />
                 <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start">
                     <Box
                         p="8"
