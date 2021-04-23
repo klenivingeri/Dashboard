@@ -1,5 +1,6 @@
 import { Flex, Button, Stack } from '@chakra-ui/react'
 import Head from 'next/head'
+import Link from 'next/link'
 
 import { Input } from '../components/Form/Input'
 import { Heads } from '../components/Heads'
@@ -28,7 +29,9 @@ export default function SignIn() {
           <Input name="password" type="password" label="Password"/>
           </Stack>
 
-          <Button type="submit" mt={6} colorScheme="pink" size="lg">Entrar</Button>
+          <Link href="/dashboard" passHref>
+          <Button as="a" type="submit" mt={6} colorScheme="pink" size="lg">Entrar</Button>
+          </Link>         
          </Flex>
       </Flex>
     </div>

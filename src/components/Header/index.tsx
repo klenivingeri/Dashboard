@@ -42,7 +42,7 @@ export function Header(){
 
 
             <Logo />
-            { isWideVersion ?? <SearchBox /> }
+             <SearchBox /> 
 
             <Flex alignItems="center" ml="auto">
                 <NotificationsNav />
