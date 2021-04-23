@@ -24,7 +24,7 @@ export default function UserList(){
                     <Flex mb="8" justifyContent="space-between" align="center">
                         <Heading size="lg" fontWeight="normal">Usuários</Heading>
 
-                        <Link href="/users/create">
+                        <Link href="/users/create" passHref>
                         <Button
                             as="a" 
                             size="sm" 
