@@ -7,6 +7,9 @@ export function SearchBox(){
 
     const searchInputRef = useRef<HTMLInputElement>(null)
     console.log(searchInputRef.current)
+    //uncontrolled components
+    //imperativa vs Declarativa
+
     return(
         <Flex as="label"
             flex="1"
