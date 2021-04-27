@@ -32,7 +32,6 @@ export default function formulario(){
             enabled: false, // remover o hover, mas é uma boa configurar
         },
         xaxis: {
-            type: 'datetime',
             axisBorder: {
                 color: theme.colors.gray[600] // borda inferior
              },
@@ -40,7 +39,7 @@ export default function formulario(){
                 color: theme.colors.pink[600] // Traços/pontos na borda inferior
              },
              categories:[
-                 '2021-03-18T00:00:00.000Z',
+                 '',
                  '2021-03-19T00:00:00.000Z',
                  '2021-03-20T00:00:00.000Z',
                  '2021-03-21T00:00:00.000Z',
@@ -68,32 +67,32 @@ export default function formulario(){
 
     return(
         <Flex direction="column" h="100vh">
-            <Heads title="Formulário"/>
-            <Header />
-            <Flex w="100%" my="6" maxWidth={1400} mx="auto" px="6" >
-                <Sidebar />
-                <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start">
-                    <Box
-                        p={["6","8"]}
-                        bg="gray.800"
-                        borderRadius={8}
-                        pb="4"    
-                    >
-                        <Text fontSize="lg" mb="4">Inscritos da semana</Text>
-                        <Chart options={options} series={series} type="radialBar" height={160}/>
-                    </Box>
-                    <Box
-                        p={["6","8"]}
-                        bg="gray.800"
-                        borderRadius={8}
-                        pb="4"    
-                    >
-                        <Text fontSize="lg" mb="4">Inscritos da semana</Text>
-                        <Chart options={options} series={series} type="histogram" height={160}/>
+        <Heads title="Dashboard"/>
+        <Header />
+        <Flex w="100%" my="6" maxWidth={1400} mx="auto" px="6" >
+            <Sidebar />
+            <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start">
+                <Box
+                    p={["6","8"]}
+                    bg="gray.800"
+                    borderRadius={8}
+                    pb="4"    
+                >
+                    <Text fontSize="lg" mb="4">Inscritos da semana</Text>
+                    <Chart options={options} series={series} type="area" height={160}/>
+                </Box>
+                <Box
+                    p={["6","8"]}
+                    bg="gray.800"
+                    borderRadius={8}
+                    pb="4"    
+                >
+                    <Text fontSize="lg" mb="4">Inscritos da semana</Text>
+                    <Chart options={options} series={series} type="area" height={160}/>
 
-                    </Box>
-                </SimpleGrid>
-            </Flex>
+                </Box>
+            </SimpleGrid>
         </Flex>
+    </Flex>
     )
 }

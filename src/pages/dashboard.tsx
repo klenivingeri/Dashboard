@@ -32,7 +32,7 @@ export default function Dashboard (){
             enabled: false, // remover o hover, mas é uma boa configurar
         },
         xaxis: {
-            type: 'datetime',
+
             axisBorder: {
                 color: theme.colors.gray[600] // borda inferior
              },
