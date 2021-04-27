@@ -11,7 +11,7 @@ const Chart = dynamic(() => import('react-apexcharts'),{
 
 
 
-export default function formulario(){
+export default function (){
     const options = {
         chart:{
             toolbar:{
@@ -32,6 +32,7 @@ export default function formulario(){
             enabled: false, // remover o hover, mas é uma boa configurar
         },
         xaxis: {
+
             axisBorder: {
                 color: theme.colors.gray[600] // borda inferior
              },
@@ -39,13 +40,13 @@ export default function formulario(){
                 color: theme.colors.pink[600] // Traços/pontos na borda inferior
              },
              categories:[
-                 '',
-                 '2021-03-19T00:00:00.000Z',
-                 '2021-03-20T00:00:00.000Z',
-                 '2021-03-21T00:00:00.000Z',
-                 '2021-03-22T00:00:00.000Z',
-                 '2021-03-23T00:00:00.000Z',
-                 '2021-03-24T00:00:00.000Z',
+                 '19 Mar',
+                 '20 Mar',
+                 '21 Mar',
+                 '22 Mar',
+                 '23 Mar',
+                 '24 Mar',
+                 '25 Mar',
              ],
         },
         fill: { // styles do grafico
@@ -67,32 +68,32 @@ export default function formulario(){
 
     return(
         <Flex direction="column" h="100vh">
-        <Heads title="Dashboard"/>
-        <Header />
-        <Flex w="100%" my="6" maxWidth={1400} mx="auto" px="6" >
-            <Sidebar />
-            <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start">
-                <Box
-                    p={["6","8"]}
-                    bg="gray.800"
-                    borderRadius={8}
-                    pb="4"    
-                >
-                    <Text fontSize="lg" mb="4">Inscritos da semana</Text>
-                    <Chart options={options} series={series} type="area" height={160}/>
-                </Box>
-                <Box
-                    p={["6","8"]}
-                    bg="gray.800"
-                    borderRadius={8}
-                    pb="4"    
-                >
-                    <Text fontSize="lg" mb="4">Inscritos da semana</Text>
-                    <Chart options={options} series={series} type="area" height={160}/>
+            <Heads title="Dashboard"/>
+            <Header />
+            <Flex w="100%" my="6" maxWidth={1400} mx="auto" px="6" >
+                <Sidebar />
+                <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start">
+                    <Box
+                        p={["6","8"]}
+                        bg="gray.800"
+                        borderRadius={8}
+                        pb="4"    
+                    >
+                        <Text fontSize="lg" mb="4">Inscritos da semana</Text>
+                        <Chart options={options} series={series} type="area" height={160}/>
+                    </Box>
+                    <Box
+                        p={["6","8"]}
+                        bg="gray.800"
+                        borderRadius={8}
+                        pb="4"    
+                    >
+                        <Text fontSize="lg" mb="4">Inscritos da semana</Text>
+                        <Chart options={options} series={series} type="area" height={160}/>
 
-                </Box>
-            </SimpleGrid>
+                    </Box>
+                </SimpleGrid>
+            </Flex>
         </Flex>
-    </Flex>
     )
 }
