@@ -11,7 +11,7 @@ const Chart = dynamic(() => import('react-apexcharts'),{
 
 
 
-export default function Dashboard (){
+export default function formulario(){
     const options = {
         chart:{
             toolbar:{
@@ -68,7 +68,7 @@ export default function Dashboard (){
 
     return(
         <Flex direction="column" h="100vh">
-            <Heads title="Dashboard"/>
+            <Heads title="Formulário"/>
             <Header />
             <Flex w="100%" my="6" maxWidth={1400} mx="auto" px="6" >
                 <Sidebar />
@@ -80,7 +80,7 @@ export default function Dashboard (){
                         pb="4"    
                     >
                         <Text fontSize="lg" mb="4">Inscritos da semana</Text>
-                        <Chart options={options} series={series} type="area" height={160}/>
+                        <Chart options={options} series={series} type="radialBar" height={160}/>
                     </Box>
                     <Box
                         p={["6","8"]}
@@ -89,7 +89,7 @@ export default function Dashboard (){
                         pb="4"    
                     >
                         <Text fontSize="lg" mb="4">Inscritos da semana</Text>
-                        <Chart options={options} series={series} type="area" height={160}/>
+                        <Chart options={options} series={series} type="histogram" height={160}/>
 
                     </Box>
                 </SimpleGrid>

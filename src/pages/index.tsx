@@ -6,6 +6,7 @@ import { Input } from '../components/Form/Input'
 
 
 import { Heads } from '../components/Heads'
+import Link from 'next/link';
 
 type SignInFormData={
   email:string;
@@ -67,7 +68,20 @@ export default function SignIn() {
           </Stack>
 
           <Button  type="submit" mt={6} colorScheme="pink" size="lg" isLoading={isSubmitting}>Entrar</Button>
-     
+
+          <Link href="/dashboard">
+          <Button
+
+          bg="transparent"
+          _hover={{
+            bg: 'transparent',
+          }}
+          _active={{
+            bg: 'transparent',
+          }}
+
+           as="a">Entrar Dashboard</Button>
+          </Link>
          </Flex>
       </Flex>
     </>
