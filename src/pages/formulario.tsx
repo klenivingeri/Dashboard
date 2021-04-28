@@ -70,9 +70,9 @@ export default function (){
         <Flex direction="column" h="100vh">
             <Heads title="Dashboard"/>
             <Header />
-            <Flex w="100%" my="6" maxWidth={1400} mx="auto" px="6" >
+            <Flex w={["507px","100%"]} my="6" maxWidth={1400} mx="auto" px="6" >
                 <Sidebar />
-                <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start">
+                <SimpleGrid flex="1" gap="4" minChildWidth="470px" alignItems="flex-start">
                     <Box
                         p={["6","8"]}
                         bg="gray.800"

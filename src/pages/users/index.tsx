@@ -17,7 +17,7 @@ export default function UserList(){
         <Heads title="Lista de Usuários"/>
         <Box>
             <Header />
-            <Flex w="100%" my="6" maxWidth="1400" mx="auto" px="6">
+            <Flex w={["501px","100%"]} my="6" maxWidth="1400" mx="auto" px="6">
                 <Sidebar/>
 
                 <Box flex="1" borderRadius={8} bg="gray.800" p="8">

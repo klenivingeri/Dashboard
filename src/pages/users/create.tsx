@@ -43,7 +43,7 @@ export default function UserCreate(){
             <Heads title="Lista de Usuários"/>
             <Box>
                 <Header />
-                <Flex w="100%" my="6" maxWidth={1400} mx="auto" px="6">
+                <Flex w={["507px","100%"]} my="6" maxWidth={1400} mx="auto" px="6">
                     <Sidebar/>
 
                     <Box 

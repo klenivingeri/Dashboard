@@ -67,12 +67,12 @@ export default function (){
     ];
 
     return(
-        <Flex direction="column" h="100vh">
+        <Flex direction="column" alignItems="center" >
             <Heads title="Dashboard"/>
             <Header />
-            <Flex w="100%" my="6" maxWidth={1400} mx="auto" px="6" >
+            <Flex mx="auto" w={["507px","100%"]} my="6"  maxWidth={1400} px="6" >
                 <Sidebar />
-                <SimpleGrid flex="1" gap="4" minChildWidth="320px" alignItems="flex-start">
+                <SimpleGrid flex="1" gap="4" minChildWidth="460px" >
                     <Box
                         p={["6","8"]}
                         bg="gray.800"

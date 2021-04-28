@@ -5,7 +5,7 @@ interface ProfileProps {
 }
 export function Profile({showProfileData = true }: ProfileProps){
     return(
-        <Flex align="center">
+    <Flex align="center" pr="5px">
             { showProfileData  && ( // controla visão mobile
         <Box mr="4" textAlign="right">
             <Text>Erick Kleniving</Text>
@@ -14,7 +14,7 @@ export function Profile({showProfileData = true }: ProfileProps){
             </Text>
         </Box>
         ) }
-        <Avatar size="md" name="Erick Kleniving" src="https://github.com/klenivingeri.png"/>
+        <Avatar size="md"  name="Erick Kleniving" src="https://github.com/klenivingeri.png"/>
     </Flex>
     )
 }
