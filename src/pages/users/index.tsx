@@ -6,6 +6,7 @@ import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 import Link from "next/link";
 
+// stale while revalidate
 
 import { useQuery } from 'react-query' // configurar providers no arquivo app
 
@@ -33,12 +34,17 @@ export default function UserList(){
                     day: '2-digit',
                     month: 'long',
                     year: 'numeric',
-                }),
-            }
-        })
+                })
+            };
+        });
     
         return users;
-    })
+
+    },{ /** fresh - Controla o time que a query buscas os dados na API */
+        staleTime: 1000 * 5
+    }
+    
+    )
 
     
 
