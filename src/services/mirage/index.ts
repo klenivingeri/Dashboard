@@ -1,4 +1,4 @@
-import { createServer, Factory, Model} from 'miragejs'; //1
+import { createServer, Factory, Model, Response} from 'miragejs'; //1
 import faker from 'faker'
 
  type User = { //4
@@ -27,12 +27,29 @@ export function makeServer() {
 
         },
         seeds(server){//6
-            server.createList('user',10);
+            server.createList('user',200);
         },
         routes(){ //3
             this.namespace = 'api'; //3.1
             this.timing = 750; // simula a busca no servido, para testar delay, carregamentos spiners 
-            this.get('/users'); //3.2
+            this.get('/users', function(schema, request){//3.2
+                // function é paginação page é o numero da pagina e per_page é quando item por pagina
+                const { page = 1 , per_page= 10 } = request.queryParams
+
+                const total = schema.all('user').length
+
+                const pageStart = (Number(page) -1 ) * Number(per_page);
+                const pageEnd = pageStart + Number(per_page)
+
+
+                const users = this.serialize(schema.all('user')).users.slice(pageStart, pageEnd)
+
+                return new Response( // padrão a ser seguido
+                    200,
+                    { 'x-total-count' : String(total) },
+                    { users }
+                )
+            });  
             this.post('/users'); //3.3
 
             this.namespace = ''; //3.4

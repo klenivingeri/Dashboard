@@ -5,10 +5,9 @@ import { Heads } from "../../components/Heads";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 import Link from "next/link";
-import { api } from '../../services/api'
+
 // stale while revalidate
 
-import { useQuery } from 'react-query' // configurar providers no arquivo app
 import { useUsers } from "../../services/hooks/useUsers";
 
 
@@ -16,7 +15,6 @@ import { useUsers } from "../../services/hooks/useUsers";
 export default function UserList(){
 
     const {data, isLoading, isFetching, error, refetch } = useUsers()
-
     
 
    const isWideVersion = useBreakpointValue({
