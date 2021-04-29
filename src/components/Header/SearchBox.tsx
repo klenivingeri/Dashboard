@@ -6,7 +6,7 @@ export function SearchBox(){
     //debounce verificar sobre
 
     const searchInputRef = useRef<HTMLInputElement>(null)
-    console.log(searchInputRef.current)
+    //console.log(searchInputRef.current)
     //uncontrolled components
     //imperativa vs Declarativa
 

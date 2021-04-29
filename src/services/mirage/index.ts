@@ -56,6 +56,8 @@ export function makeServer() {
 
 
 /**
+Usamos o react-query para requisitar dados da API.
+prevismas configurar no providers
  
 Esse é o primeiro arquivo depois de instalar a lib do mirage, criamos a pasta services/mirage/index.js
 
