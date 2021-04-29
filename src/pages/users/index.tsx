@@ -9,42 +9,13 @@ import { api } from '../../services/api'
 // stale while revalidate
 
 import { useQuery } from 'react-query' // configurar providers no arquivo app
+import { useUsers } from "../../services/hooks/useUsers";
 
-interface User  {
-    id: string;
-    name: string;
-    email: string;
-    createdAt: string;
 
-}
 
 export default function UserList(){
 
-    const {data, isLoading, isFetching, error, refetch } = useQuery('users', async ()=> {
-        const { data } = await api.get('users')
-        
-
-        /** Trata os dados antes de devolver para query, coonseguimos acessar dentro de {data } useQuery */
-        const users = data.users.map((user: User)=>{ 
-            return {
-                id: user.id,
-                name: user.name,
-                email: user.email,
-                createdAt: new Date(user.createdAt).toLocaleDateString('pt-BR', {
-                    day: '2-digit',
-                    month: 'long',
-                    year: 'numeric',
-                })
-            };
-        });
-    
-        return users;
-
-    },{ /** fresh - Controla o time que a query buscas os dados na API */
-        staleTime: 1000 * 5 //5 seconds
-    }
-    
-    )
+    const {data, isLoading, isFetching, error, refetch } = useUsers()
 
     
 
@@ -107,7 +78,7 @@ export default function UserList(){
                         </Thead>
                         <Tbody>
                            
-                            { data.map( (user: User)=>{
+                            { data.map( user => {
                                 return (
                                     <Tr key={user.id}>
                                 <Td px={["4","4","6"]}>
