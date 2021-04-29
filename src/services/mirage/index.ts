@@ -27,7 +27,7 @@ export function makeServer() {
 
         },
         seeds(server){//6
-            server.createList('user',200);
+            server.createList('user',10);
         },
         routes(){ //3
             this.namespace = 'api'; //3.1
