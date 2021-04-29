@@ -1,4 +1,5 @@
-import { createServer, Model} from 'miragejs'; //1
+import { createServer, Factory, Model} from 'miragejs'; //1
+import faker from 'faker'
 
  type User = { //4
     name: String;
@@ -11,7 +12,23 @@ export function makeServer() {
         models: {//2
             user: Model.extend<Partial<User>>({})
         },
+        factories:{//5
+            user: Factory.extend({
+                name(i: number){
+                    return faker.name.findName();
+                },
+                email(){
+                    return faker.internet.email().toLowerCase();
+                },
+                createdAt(){
+                    return faker.date.recent(10)
+                }
+            })
 
+        },
+        seeds(server){//6
+            server.createList('user',200);
+        },
         routes(){ //3
             this.namespace = 'api'; //3.1
             this.timing = 750; // simula a busca no servido, para testar delay, carregamentos spiners 
@@ -54,8 +71,13 @@ Esse é o primeiro arquivo depois de instalar a lib do mirage, criamos a pasta s
 3.4 - Caso tenha uma rota de API dentro da file pages, resetando ele com '' não prejudica o fluxo
 3.5 - São obrigadas a passar pela API do mirage, e caso não encontre nada, ele envia para o fluxo normal
       de API dentro da file pages
+
 4 - Serve como a tabela de usuario
 
+5 - Cria dados em massa, é o mesmo nome que esta no type, porem deve ser passado em metodo
+
+
+6 - seeds é utilizado para criar um server com dados
 
 
 
