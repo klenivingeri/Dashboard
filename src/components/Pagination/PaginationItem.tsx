@@ -30,7 +30,7 @@ export function PaginationItem({ isCurrent = false, number }: PaginationItemProp
             size="sm"
             fontSize="x5"
             width="4"
-            colorScheme="gray.700"
+            bg="gray.700"
             _hover={{
                 bgColor: 'gray.500'
             }}
