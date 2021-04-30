@@ -3,14 +3,14 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from '../styles/theme'
 import { SidebarDrawerProvider } from '../contexts/SidebarDrawerContext'
 import { makeServer } from '../services/mirage'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-
+import { queryClient } from '../services/queryCliente'
 
   makeServer(); //2
 
 
-const queryClient = new QueryClient()
+
 
 function MyApp({ Component, pageProps }: AppProps) {
 

@@ -50,6 +50,7 @@ export function makeServer() {
                     { users }
                 )
             });  
+            this.get('/users/:id'); // preftching de user
             this.post('/users'); //3.3
 
             this.namespace = ''; //3.4

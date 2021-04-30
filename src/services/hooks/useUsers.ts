@@ -44,7 +44,7 @@ export async function gerUsers(page:number): Promise<GetUsersResponse> {
 export function useUsers(page: number) {
 
   return  useQuery(['users',page], () => gerUsers(page),{
-        staleTime: 1000 * 5 //5 seconds  
+        staleTime: 1000 * 60 * 10, // 10 minute
         /** fresh - Controla o time que a query buscas os dados na API */
     })
 
