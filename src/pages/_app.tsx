@@ -5,9 +5,10 @@ import { SidebarDrawerProvider } from '../contexts/SidebarDrawerContext'
 import { makeServer } from '../services/mirage'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-if(process.env.NODE_ENV == 'development') {//1
+
+
   makeServer(); //2
-}
+
 
 const queryClient = new QueryClient()
 

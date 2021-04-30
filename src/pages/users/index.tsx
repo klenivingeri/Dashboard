@@ -113,7 +113,7 @@ console.log(page)
                     </Table>
                     <Pagination
                     totalCounteOfRegisters={data.totalCount}
-                    currentPage={5}
+                    currentPage={page}
                     onPageChange={setPage}/>
                     </>
                     )}

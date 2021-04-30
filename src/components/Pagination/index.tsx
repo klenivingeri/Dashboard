@@ -9,7 +9,7 @@ interface PaginationsProps{
 }
 
 /** Quantas paginas quero mostrar ao lado da pagina foco */
-const siblingsCount = 1;
+const siblingsCount = 2;
 
 function generatePageArray(from: number, to:number){
     return [...new Array(to - from)]
@@ -32,7 +32,7 @@ export function Pagination({
 
     /** Quais vão ser as paginas que vão ser mostradas antes da pagina atual */
     const previousPages = currentPage > 1
-        ?  generatePageArray(currentPage - 1 - siblingsCount, currentPage -1)
+        ?  generatePageArray(currentPage - 1 - siblingsCount, currentPage - 1)
         :[]
 
         const nextPages = currentPage < lastPage
