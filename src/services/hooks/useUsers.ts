@@ -9,9 +9,19 @@ type User = {
     email: string;
     createdAt: string
 }
+type GetUsersResponse ={
+    totalCount: number;
+    users: User[];
+}
 /** funções async sempre retornam promise */
-export async function gerUsers(): Promise<User[]> {
-    const { data } = await api.get('users')
+export async function gerUsers(page:number): Promise<GetUsersResponse> {
+    const { data, headers } = await api.get('users',{
+        params: {
+            page,
+        }
+    })
+
+    const totalCount  = Number(headers['x-total-count'])
     /** Trata os dados antes de devolver para query, coonseguimos acessar dentro de {data } useQuery */
     const users = data.users.map(user => { 
         return {
@@ -26,13 +36,14 @@ export async function gerUsers(): Promise<User[]> {
         };
     });
 
-    return users;
+    return {users,
+        totalCount};
 
 }
 
-export function useUsers() {
+export function useUsers(page: number) {
 
-  return  useQuery('users', gerUsers,{
+  return  useQuery(['users',page], () => gerUsers(page),{
         staleTime: 1000 * 5 //5 seconds  
         /** fresh - Controla o time que a query buscas os dados na API */
     })

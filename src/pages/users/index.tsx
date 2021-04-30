@@ -9,14 +9,15 @@ import Link from "next/link";
 // stale while revalidate
 
 import { useUsers } from "../../services/hooks/useUsers";
+import { useState } from "react";
 
 
 
 export default function UserList(){
-
-    const {data, isLoading, isFetching, error, refetch } = useUsers()
+    const [ page, setPage ] = useState(1)
+    const {data, isLoading, isFetching, error, refetch } = useUsers(page)
     
-
+console.log(page)
    const isWideVersion = useBreakpointValue({
        base: false,
        lg: true,
@@ -76,7 +77,7 @@ export default function UserList(){
                         </Thead>
                         <Tbody>
                            
-                            { data.map( user => {
+                            { data.users.map( user => {
                                 return (
                                     <Tr key={user.id}>
                                 <Td px={["4","4","6"]}>
@@ -111,9 +112,9 @@ export default function UserList(){
                         </Tbody>
                     </Table>
                     <Pagination
-                    totalCounteOfRegisters={200}
+                    totalCounteOfRegisters={data.totalCount}
                     currentPage={5}
-                    onPageChange={() =>{}}/>
+                    onPageChange={setPage}/>
                     </>
                     )}
                     
